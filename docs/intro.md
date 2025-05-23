@@ -18,7 +18,7 @@ Rolo is a modern CLI tool designed to streamline your browser extension developm
 1. **Install Rolo** (if published to npm):
 
    ```sh
-   npm install -g rolo-cli
+   npm install -g rolo
    ```
 
 2. **Create a New Extension Project**:
