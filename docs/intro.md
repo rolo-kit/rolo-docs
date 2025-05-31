@@ -39,6 +39,11 @@ Rolo is a modern CLI tool designed to streamline your browser extension developm
    rolo build
    ```
 
+5. **Build for Production**:
+
+   ```sh
+   rolo config [options]
+   ```
 ## Learn More
 
 - Explore the [CLI Commands](./cli-init.md) for details on each command.

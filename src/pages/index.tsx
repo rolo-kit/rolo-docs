@@ -108,6 +108,37 @@ npm link</code></pre>
             </li>
           </ol>
           <p>You can now use the <code>rolo</code> command globally for local development and testing.</p>
+          <h2 className="margin-top--lg">rolo.config.json Options</h2>
+          <ul>
+            <li><b>name</b>: The name of your extension.</li>
+            <li><b>description</b>: A short description of your extension.</li>
+            <li><b>templateType</b>: <code>react</code> or <code>vanilla</code> (template used for the project).</li>
+            <li><b>permissions</b>: Array of Chrome extension permissions (e.g. <code>["storage", "tabs"]</code>).</li>
+            <li><b>version</b>: The version of your extension.</li>
+            <li><b>author</b>: The author of the extension.</li>
+            <li><b>manifest</b>: Object for custom manifest fields (merged into manifest.json).</li>
+            {/* Add more config options as your project supports them */}
+          </ul>
+
+          <h2 className="margin-top--lg">rolo config Command</h2>
+          <p>
+            The <code>rolo config</code> command lets you view, add, update, or remove keys in your <code>rolo.config.json</code> file from the CLI. It supports merging values into arrays/objects, and will prompt for missing keys/values if not provided via CLI options. You can also edit <code>rolo.config.json</code> manually for advanced or bulk changes.
+          </p>
+          <ul>
+            <li><b>Set a config value:</b> <br />
+              <code>rolo config --key name --value "My Extension"</code>
+            </li>
+            <li><b>Set a JSON array value:</b> <br />
+              <code>rolo config --key permissions --value '["storage","tabs"]'</code>
+            </li>
+            <li><b>Add a value to an existing array property:</b> <br />
+              <code>rolo config --key permissions --value 'cookies' --add</code>
+            </li>
+            <li><b>Remove a config key:</b> <br />
+              <code>rolo config --key permissions --remove</code>
+            </li>
+            <li>If you omit <code>--key</code> or <code>--value</code>, the CLI will prompt you interactively.</li>
+          </ul>
         </div>
       </div>
     </section>
