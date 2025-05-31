@@ -1,6 +1,23 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import fs from 'fs';
+import path from 'path';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+/** Dynamically generate CLI command docs for the sidebar */
+function getCliCommandDocs() {
+  const docsDir = path.join(__dirname, 'docs');
+  let items: string[] = [];
+  try {
+    items = fs
+      .readdirSync(docsDir)
+      .filter((file) => file.startsWith('cli-') && file.endsWith('.md'))
+      .map((file) => file.replace(/\.md$/, ''))
+      .sort();
+  } catch (e) {
+    // fallback: static list if docsDir not found
+    items = ['cli-build', 'cli-config', 'cli-dev', 'cli-init'];
+  }
+  return items;
+}
 
 /**
  * Creating a sidebar enables you to:
@@ -19,26 +36,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'CLI Commands',
-      items: [
-        'cli-init',
-        'cli-build',
-        'cli-dev',
-      ],
+      items: getCliCommandDocs(),
     },
   ],
-
-  // But you can create a sidebar manually
-  /*
-  tutorialSidebar: [
-    'intro',
-    'hello',
-    {
-      type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
-    },
-  ],
-   */
 };
 
 export default sidebars;

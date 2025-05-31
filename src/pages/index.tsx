@@ -48,7 +48,7 @@ function FeatureSection() {
           <ol>
             <li>
               <b>Install Rolo</b> (if published to npm):
-              <pre><code>npm install -g rolo</code></pre>
+              <pre><code>npm install -g rolo-cli</code></pre>
             </li>
             <li>
               <b>Initialize a New Project:</b>
@@ -62,6 +62,10 @@ function FeatureSection() {
               <b>Build Your Project:</b>
               <pre><code>rolo build</code></pre>
             </li>
+            <li>
+              <b>Update configurations and permissions:</b>
+              <pre><code>rolo config [options]</code></pre>
+            </li>
           </ol>
         </div>
       </div>
@@ -72,6 +76,7 @@ function FeatureSection() {
             <li><code>rolo init</code> – Scaffold a new project</li>
             <li><code>rolo dev</code> – Start development server with HMR</li>
             <li><code>rolo build</code> – Build the project for production</li>
+            <li><code>rolo config [options]</code> – Update configurations and permissions</li>
           </ul>
         </div>
         <div className="col col--6">
